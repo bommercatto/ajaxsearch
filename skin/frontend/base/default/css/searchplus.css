@@ -1,4 +1,4 @@
-.autocomplete-w1 {z-index:999; background:url(../images/searchplus/shadow.png) no-repeat bottom right; position:absolute; top:37px; left:8px; /* IE6 fix: */ _background:none; _top:1px; }
+.autocomplete-w1 {z-index:999; background:url(../images/searchplus/shadow.png) no-repeat bottom right; position:fixed; top:100px; left:508px; /* IE6 fix: */ _background:none; _top:1px; }
 .autocomplete { width:300px; border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:350px; overflow:auto; margin:-6px 6px 6px -6px; /* IE specific: */ _height:350px;  _margin:0px 6px 6px 0; overflow-x:hidden; }
 .autocomplete .selected { /* background:#F0F0F0; */ }
 .autocomplete div { padding:2px 5px; clear:both; overflow: hidden; line-height:1.1em; font-weight: bold; cursor: pointer;}
