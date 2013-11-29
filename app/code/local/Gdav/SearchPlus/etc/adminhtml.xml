@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+		<menu>
+			<gdav>
+				<title>gdav</title>
+				<sort_order>420</sort_order>
+				<children>
+					  <search_plus module="searchplus">
+						  <title>SearchPlus - Busca Avançada</title>
+						  <sort_order>1</sort_order>
+						  <action>adminhtml/system_config/edit/section/search_plus</action>
+						  <children></children>
+					  </search_plus>
+				</children>
+			</gdav>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<search_plus>
+											<title>Gdav_SearchPlus</title>
+											<sort_order>2</sort_order>
+										</search_plus>
+									</children>
+								</config>
+							</children>
+						</system>
+						<gdav>
+							<title>gdav</title>
+							<sort_order>420</sort_order>
+							<children>
+								<search_plus translate="title" module="searchplus">
+									<title>Search Plus</title>
+									<sort_order>10</sort_order>
+									<action>adminhtml/system_config/edit/section/search_plus</action>
+								</search_plus>								  
+							</children>
+						</gdav>
+					</children>
+				</admin>
+			</resources>
+		</acl>			
+ </config>

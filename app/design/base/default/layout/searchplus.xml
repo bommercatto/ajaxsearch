@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    	<reference name="head">
+            <action method="addItem" ifconfig="search_plus/general/enabled"><type>skin_css</type><name>css/searchplus.css</name></action>
+            <action method="addItem" ifconfig="search_plus/general/enabled"><type>skin_js</type><name>js/searchplus.js</name></action>
+        </reference>
+        <reference name="top.search">
+        	<action method="setTemplate" ifconfig="search_plus/general/enabled"><template>searchplus/topsearch.phtml</template></action>
+        </reference>
+		<reference name="left">
+			<block type="core/template" name="left.search" as="leftSearch" before="-">
+				<action method="setTemplate" ifconfig="search_plus/general/enabled"><template>searchplus/leftsearch.phtml</template></action>
+			</block>
+        </reference>
+		<reference name="right">
+			<block type="core/template" name="right.search" as="rightSearch" before="-">
+				<action method="setTemplate" ifconfig="search_plus/general/enabled"><template>searchplus/rightsearch.phtml</template></action>
+			</block>
+        </reference>		
+    </default>
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- SearchPlus -->
+    <modules>
+        <Gdav_SearchPlus>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Gdav_SearchPlus>
+    </modules>
+</config>
