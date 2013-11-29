@@ -1,8 +1,7 @@
 <?php if (Mage::getStoreConfig('search_plus/general/enabled')) :?>
 <form id="search_mini_form" action="<?php echo $this->helper('catalogSearch')->getResultUrl() ?>" method="get">
-    <fieldset>
-        <legend><?php echo $this->__('Search Site') ?></legend>
-        <div class="mini-search form-search">
+	<div class="form-search">
+		<label for="search"><?php echo $this->__('Search:') ?></label>
        	    <div id="searchajaxico" class=""></div>
 			<input id="search" type="text" class="input-text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" value="<?php echo Mage::getStoreConfig('search_plus/general/searchfieldtext'); ?>" />
             <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
@@ -33,6 +32,5 @@
             //]]>
             </script>
         </div>
-    </fieldset>
 </form>
 <?php endif; ?>
