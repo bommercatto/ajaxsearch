@@ -1,34 +1,34 @@
 <?php if (Mage::getStoreConfig('search_plus/general/enabled')) :?>
 <form id="search_mini_form" action="<?php echo $this->helper('catalogSearch')->getResultUrl() ?>" method="get">
-	<div class="form-search">
-		<label for="search"><?php echo $this->__('Search:') ?></label>
-       	    <div id="searchajaxico" class=""></div>
-			<input id="search" type="text" class="input-text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" value="<?php echo Mage::getStoreConfig('search_plus/general/searchfieldtext'); ?>" />
+    <div class="form-search">
+        <label for="search"><?php echo $this->__('Search:') ?></label>
+            <div id="searchajaxico" class=""></div>
+            <input id="search" type="text" class="input-text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" value="<?php echo Mage::getStoreConfig('search_plus/general/searchfieldtext'); ?>" />
             <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
- <script type="text/javascript">
+            <script type="text/javascript">
             //<![CDATA[
-			function initAutocomplete(){
-				new Autocomplete('search', { 
-					serviceUrl:'<?php echo $this->getUrl('searchplus'); ?>',
-					store:'<?php echo Mage::app()->getStore()->getStoreId(); ?>',
-					enableimage:'<?php echo (int)Mage::getStoreConfig('search_plus/general/enableimage'); ?>',
-					enableloader:'<?php echo (int)Mage::getStoreConfig('search_plus/general/enableloader'); ?>',
-					enabledescription:'<?php echo (int)Mage::getStoreConfig('search_plus/general/enabledescription'); ?>',
-					descriptionchars:'<?php echo (int)Mage::getStoreConfig('search_plus/general/descriptionchars'); ?>',
-					minChars:'<?php echo Mage::getStoreConfig('search_plus/general/minchars'); ?>', 
-					maxHeight:'<?php echo Mage::getStoreConfig('search_plus/general/maxheight'); ?>',
-					width:'<?php echo Mage::getStoreConfig('search_plus/general/width'); ?>',
-					searchtext:'<?php echo Mage::getStoreConfig('search_plus/general/searchfieldtext'); ?>',
+            function initAutocomplete(){
+                new Autocomplete('search', { 
+                    serviceUrl:'<?php echo $this->getUrl('searchplus'); ?>',
+                    store:'<?php echo Mage::app()->getStore()->getStoreId(); ?>',
+                    enableimage:'<?php echo (int)Mage::getStoreConfig('search_plus/general/enableimage'); ?>',
+                    enableloader:'<?php echo (int)Mage::getStoreConfig('search_plus/general/enableloader'); ?>',
+                    enabledescription:'<?php echo (int)Mage::getStoreConfig('search_plus/general/enabledescription'); ?>',
+                    descriptionchars:'<?php echo (int)Mage::getStoreConfig('search_plus/general/descriptionchars'); ?>',
+                    minChars:'<?php echo Mage::getStoreConfig('search_plus/general/minchars'); ?>', 
+                    maxHeight:'<?php echo Mage::getStoreConfig('search_plus/general/maxheight'); ?>',
+                    width:'<?php echo Mage::getStoreConfig('search_plus/general/width'); ?>',
+                    searchtext:'<?php echo Mage::getStoreConfig('search_plus/general/searchfieldtext'); ?>',
                     baseUrl:'<?php echo Mage::getBaseUrl(); ?>',
                     secureUrl:'<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK, true); ?>',
-					onSelect: onAutocompleteSubmit 
-				});
-			}
-			if (Prototype.Browser.IE) {
-			    Event.observe(window, 'load', initAutocomplete);
-			} else {
-			    document.observe("dom:loaded", initAutocomplete);
-			}
+                    onSelect: onAutocompleteSubmit 
+                });
+            }
+            if (Prototype.Browser.IE) {
+                Event.observe(window, 'load', initAutocomplete);
+            } else {
+                document.observe("dom:loaded", initAutocomplete);
+            }
             //]]>
             </script>
         </div>

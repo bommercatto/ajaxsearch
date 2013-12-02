@@ -31,13 +31,13 @@ var Autocomplete = function(el, options){
   this.options = {
     autoSubmit:false,
     minChars:1,
-	store:1,
-	enableimage: 0,
-	enableloader: 0,
+    store:1,
+    enableimage: 0,
+    enableloader: 0,
     maxHeight:300,
     deferRequestBy:0,
     width:0,
-	searchtext:'',
+    searchtext:'',
     baseUrl:'',
     secureUrl:'',
     container:null
@@ -97,8 +97,8 @@ Autocomplete.prototype = {
     Event.observe(this.el, 'keyup', this.onKeyUp.bind(this));
     Event.observe(this.el, 'blur', this.enableKillerFn.bind(this));
     Event.observe(this.el, 'focus', this.fixPosition.bind(this));
-	Event.observe(this.el, 'click', this.fixText.bind(this));
-	Event.observe(this.el, 'blur', this.fixText.bind(this));
+    Event.observe(this.el, 'click', this.fixText.bind(this));
+    Event.observe(this.el, 'blur', this.fixText.bind(this));
     this.container.setStyle({ maxHeight: this.options.maxHeight + 'px' });
     this.instanceId = Autocomplete.instances.push(this) - 1;
   },
@@ -109,13 +109,13 @@ Autocomplete.prototype = {
   },
   
   fixText: function() {
-	if(this.el.value == this.options.searchtext){
-		this.el.value='';
-	} else if(this.el.value.length == 0) {
-		this.el.value = this.options.searchtext;
-	} else {
-		return;
-	};
+  if(this.el.value == this.options.searchtext){
+    this.el.value='';
+  } else if(this.el.value.length == 0) {
+    this.el.value = this.options.searchtext;
+  } else {
+    return;
+  };
   },
 
   enableKillerFn: function() {
@@ -203,12 +203,12 @@ Autocomplete.prototype = {
     var cr = this.cachedResponse[this.currentValue];
     if (cr && Object.isArray(cr.suggestions)) {
       this.suggestions = cr.suggestions;
-	  this.image = cr.image;
-	  this.description = cr.description;
+    this.image = cr.image;
+    this.description = cr.description;
       this.data = cr.data;
       this.suggest();
     } else if (!this.isBadQuery(this.currentValue)) {
-	  this.showloader();
+    this.showloader();
       var currentUrl = window.location.href;
         var isBaseUrl = (0 === currentUrl.indexOf(this.options.baseUrl));
         var isRequestBaseUrl = (0 === this.serviceUrl.indexOf(this.options.baseUrl));
@@ -240,22 +240,22 @@ Autocomplete.prototype = {
   },
 
   suggest: function() {
-  	this.hideloader();
+    this.hideloader();
     if (this.suggestions.length === 0) {
       this.hide();
       return;
     }
     var content = [];
     var re = new RegExp('\\b' + this.currentValue.match(/\w+/g).join('|\\b'), 'gi');
-	// \w => [\w\u0590-\u05FF] for Hebrew support
+  // \w => [\w\u0590-\u05FF] for Hebrew support
 
     // header
     if (this.headertext != '') {
         content.push('<p class="headersearchpluswindow">',this.headertext,'</p>');
     }
     this.suggestions.each(function(value, i) {
-	  var image = this.image[i];
-	  var description = this.description[i];
+    var image = this.image[i];
+    var description = this.description[i];
       content.push((this.selectedIndex === i ? '<div class="selected searchplustitle"' : '<div class="searchplustitle"'), ' title="', value, '" onclick="Autocomplete.instances[', this.instanceId, '].select(', i, ');" onmouseover="Autocomplete.instances[', this.instanceId, '].activate(', i, ');">',image ,'<p>', Autocomplete.highlight(value, re), '', description ,'</p></div>');
     } .bind(this));
     // footer
@@ -274,8 +274,8 @@ Autocomplete.prototype = {
       if (!Object.isArray(response.data)) { response.data = []; }
     } catch (err) { return; }
     this.suggestions = response.suggestions;
-	this.image = response.image;
-	this.description = response.description;
+  this.image = response.image;
+  this.description = response.description;
     this.data = response.data;
     this.headertext = response.headertext;
     this.footertext = response.footertext;
@@ -363,7 +363,7 @@ Autocomplete.prototype = {
 };
 
 function onAutocompleteSubmit(value, data){
-	setLocation(data)
+  setLocation(data)
 } 
 
 Event.observe(document, 'dom:loaded', function(){ Autocomplete.isDomLoaded = true; }, false);
